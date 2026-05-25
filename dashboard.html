@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — PeerReview Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">P</span>eer<span class="logo-accent">Review</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+      <li><a href="design.html" class="nav-link">Design</a></li>
+      <li><a href="accessibility.html" class="nav-link">Accessibility</a></li>
+    </ul>
+    <span class="btn-nav" style="opacity:0.5;cursor:default">Dashboard</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <p class="sidebar-label">Main</p>
+        <button class="sidebar-item active" onclick="showPanel('overview')">
+          <span class="sidebar-icon">📊</span> Overview
+        </button>
+        <button class="sidebar-item" onclick="showPanel('submit')">
+          <span class="sidebar-icon">📤</span> Submit Draft
+        </button>
+        <button class="sidebar-item" onclick="showPanel('reviews')">
+          <span class="sidebar-icon">📝</span> My Reviews
+        </button>
+        <button class="sidebar-item" onclick="showPanel('feedback')">
+          <span class="sidebar-icon">💬</span> Feedback Received
+        </button>
+      </div>
+      <div class="sidebar-section">
+        <p class="sidebar-label">Community</p>
+        <button class="sidebar-item" onclick="showPanel('leaderboard')">
+          <span class="sidebar-icon">🏆</span> Leaderboard
+        </button>
+        <button class="sidebar-item" onclick="showPanel('notifications')">
+          <span class="sidebar-icon">🔔</span> Notifications
+          <span style="margin-left:auto;font-size:0.65rem;background:var(--teal);color:var(--bg);border-radius:100px;padding:1px 7px;font-family:var(--font-mono)">3</span>
+        </button>
+      </div>
+      <div class="sidebar-section">
+        <p class="sidebar-label">Account</p>
+        <button class="sidebar-item" onclick="showPanel('profile')">
+          <span class="sidebar-icon">🎓</span> Profile
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dash-main">
+
+      <!-- ── Overview Panel ── -->
+      <div id="panel-overview" class="dash-panel">
+        <div class="dash-header">
+          <div>
+            <h1 class="dash-greeting">Good morning, Lesiba 👋</h1>
+            <p class="dash-sub">You have 2 pending reviews and 1 new feedback notification.</p>
+          </div>
+          <button class="btn-primary" onclick="showPanel('submit')">+ Submit Draft</button>
+        </div>
+
+        <div class="dash-stats">
+          <div class="dash-stat reveal" style="--delay:0s">
+            <div class="dash-stat-num">7</div>
+            <div class="dash-stat-label">Drafts Submitted</div>
+          </div>
+          <div class="dash-stat reveal" style="--delay:0.06s">
+            <div class="dash-stat-num">12</div>
+            <div class="dash-stat-label">Reviews Given</div>
+          </div>
+          <div class="dash-stat reveal" style="--delay:0.12s">
+            <div class="dash-stat-num">9</div>
+            <div class="dash-stat-label">Reviews Received</div>
+          </div>
+          <div class="dash-stat reveal" style="--delay:0.18s">
+            <div class="dash-stat-num" style="color:var(--gold)">3</div>
+            <div class="dash-stat-label">Badges Earned</div>
+          </div>
+        </div>
+
+        <div class="dash-grid-2">
+          <!-- Recent Reviews -->
+          <div class="dash-widget reveal">
+            <div class="widget-title">
+              Recent Activity
+              <span class="widget-action">View All →</span>
+            </div>
+            <div class="review-item">
+              <div class="review-dot pending"></div>
+              <div class="review-text">
+                <div class="review-name">Essay: Climate Policy Analysis</div>
+                <div class="review-meta">Due in 2 days · Awaiting your review</div>
+              </div>
+              <span class="review-badge pending">Pending</span>
+            </div>
+            <div class="review-item">
+              <div class="review-dot completed"></div>
+              <div class="review-text">
+                <div class="review-name">Research Proposal: EdTech</div>
+                <div class="review-meta">Reviewed 1 day ago</div>
+              </div>
+              <span class="review-badge completed">Done</span>
+            </div>
+            <div class="review-item">
+              <div class="review-dot pending"></div>
+              <div class="review-text">
+                <div class="review-name">Case Study: UX in Healthcare</div>
+                <div class="review-meta">Due in 4 days</div>
+              </div>
+              <span class="review-badge pending">Pending</span>
+            </div>
+            <div class="review-item">
+              <div class="review-dot completed"></div>
+              <div class="review-text">
+                <div class="review-name">Essay: Social Media Ethics</div>
+                <div class="review-meta">Reviewed 3 days ago</div>
+              </div>
+              <span class="review-badge completed">Done</span>
+            </div>
+          </div>
+
+          <!-- Progress -->
+          <div class="dash-widget reveal" style="--delay:0.1s">
+            <div class="widget-title">
+              Semester Progress
+              <span class="widget-action" style="color:var(--text-3)">Week 9 of 14</span>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-label"><span>Reviews Given</span><span>12 / 15</span></div>
+              <div class="progress-track">
+                <div class="progress-fill" data-width="80%"></div>
+              </div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-label"><span>Feedback Received</span><span>9 / 12</span></div>
+              <div class="progress-track">
+                <div class="progress-fill" data-width="75%"></div>
+              </div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-label"><span>Revision Rounds</span><span>5 / 7</span></div>
+              <div class="progress-track">
+                <div class="progress-fill" data-width="71%"></div>
+              </div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-label"><span>Semester Complete</span><span>64%</span></div>
+              <div class="progress-track">
+                <div class="progress-fill" data-width="64%" style="background:linear-gradient(90deg,var(--gold),rgba(240,192,96,0.4))"></div>
+              </div>
+            </div>
+
+            <!-- Badges -->
+            <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+              <span class="badge-chip" style="font-size:0.8rem;padding:5px 14px">🎓 Scholar</span>
+              <span class="badge-chip" style="font-size:0.8rem;padding:5px 14px">💬 Helper</span>
+              <span class="badge-chip" style="font-size:0.8rem;padding:5px 14px">⭐ Top Reviewer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications preview -->
+        <div class="dash-widget reveal">
+          <div class="widget-title">
+            Notifications
+            <span class="widget-action" onclick="showPanel('notifications')">View All →</span>
+          </div>
+          <div class="notif-item">
+            <div class="notif-icon">💬</div>
+            <div class="notif-text">
+              <p>Your draft <strong>"Critical Analysis: AI in Education"</strong> has been reviewed.</p>
+              <span>2 hours ago</span>
+            </div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-icon">⏰</div>
+            <div class="notif-text">
+              <p>Reminder: Review for <strong>"Climate Policy Analysis"</strong> is due in 48 hours.</p>
+              <span>5 hours ago</span>
+            </div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-icon">🏅</div>
+            <div class="notif-text">
+              <p>You earned the <strong>Top Reviewer</strong> badge for this week!</p>
+              <span>1 day ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Submit Panel ── -->
+      <div id="panel-submit" class="dash-panel" style="display:none">
+        <div class="dash-header">
+          <div>
+            <h1 class="dash-greeting">Submit a Draft</h1>
+            <p class="dash-sub">Upload your essay or project for anonymous peer review.</p>
+          </div>
+        </div>
+
+        <div style="max-width:640px">
+          <div class="dash-widget" style="margin-bottom:20px">
+            <div class="widget-title">Draft Details</div>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div>
+                <label style="display:block;font-size:0.8rem;color:var(--text-2);font-family:var(--font-mono);letter-spacing:0.08em;margin-bottom:6px;text-transform:uppercase">Assignment Title</label>
+                <input id="draftTitle" type="text" placeholder="e.g. Critical Analysis: AI in Education" style="width:100%;background:var(--surface-2);border:1px solid var(--border-2);border-radius:var(--radius-sm);padding:12px 16px;color:var(--text);font-family:var(--font-body);font-size:0.9rem;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border-2)'" />
+              </div>
+              <div>
+                <label style="display:block;font-size:0.8rem;color:var(--text-2);font-family:var(--font-mono);letter-spacing:0.08em;margin-bottom:6px;text-transform:uppercase">Assignment Type</label>
+                <select id="draftType" style="width:100%;background:var(--surface-2);border:1px solid var(--border-2);border-radius:var(--radius-sm);padding:12px 16px;color:var(--text);font-family:var(--font-body);font-size:0.9rem;outline:none">
+                  <option value="essay">Essay</option>
+                  <option value="research">Research Proposal</option>
+                  <option value="case">Case Study</option>
+                  <option value="report">Report</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block;font-size:0.8rem;color:var(--text-2);font-family:var(--font-mono);letter-spacing:0.08em;margin-bottom:6px;text-transform:uppercase">Review Deadline</label>
+                <input type="date" style="width:100%;background:var(--surface-2);border:1px solid var(--border-2);border-radius:var(--radius-sm);padding:12px 16px;color:var(--text);font-family:var(--font-body);font-size:0.9rem;outline:none" />
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-widget" style="margin-bottom:20px">
+            <div class="widget-title">Upload File</div>
+            <div class="upload-area" id="uploadArea">
+              <div class="upload-icon">📎</div>
+              <p class="upload-text">Drag and drop your file here, or click to browse</p>
+              <p class="upload-sub">Accepted formats: PDF · DOCX · TXT — Max 10MB</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px">
+            <button class="btn-primary" onclick="submitDraft()" style="flex:1">Submit for Review →</button>
+            <button class="btn-outline" onclick="showPanel('overview')">Cancel</button>
+          </div>
+
+          <div id="submitSuccess" style="display:none;margin-top:20px;padding:24px;background:var(--teal-dim);border:1px solid rgba(0,229,195,0.3);border-radius:var(--radius);text-align:center">
+            <p style="font-size:1.5rem;margin-bottom:8px">✅</p>
+            <p style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:6px">Draft Submitted Successfully!</p>
+            <p style="font-size:0.875rem;color:var(--text-2)">Reviewers will provide feedback within <strong style="color:var(--teal)">3 days</strong>. Good luck!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Reviews Panel ── -->
+      <div id="panel-reviews" class="dash-panel" style="display:none">
+        <div class="dash-header">
+          <div>
+            <h1 class="dash-greeting">My Reviews</h1>
+            <p class="dash-sub">Assigned peer reviews — complete all rubric sections before submitting.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;max-width:720px">
+          <div class="dash-widget">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+              <div>
+                <p style="font-family:var(--font-display);font-weight:700;margin-bottom:3px">Climate Policy Analysis Essay</p>
+                <p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">Due in 2 days · Essay · ~3,200 words</p>
+              </div>
+              <span class="review-badge pending" style="font-size:0.75rem;padding:4px 12px">Pending</span>
+            </div>
+            <div style="background:var(--surface-2);border-radius:var(--radius-sm);padding:16px;margin-bottom:16px">
+              <p style="font-size:0.8rem;color:var(--text-2);font-family:var(--font-mono);margin-bottom:8px">RUBRIC SECTIONS</p>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <span style="font-size:0.8rem;color:var(--text-2)">✓ Argument Quality</span>
+                <span style="font-size:0.8rem;color:var(--text-2)">✗ Evidence & Sources</span>
+                <span style="font-size:0.8rem;color:var(--text-2)">✓ Structure & Flow</span>
+                <span style="font-size:0.8rem;color:var(--text-2)">✗ Language & Style</span>
+              </div>
+            </div>
+            <button class="btn-primary" style="width:100%">Continue Review →</button>
+          </div>
+
+          <div class="dash-widget">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+              <div>
+                <p style="font-family:var(--font-display);font-weight:700;margin-bottom:3px">UX in Healthcare Case Study</p>
+                <p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">Due in 4 days · Case Study · ~2,800 words</p>
+              </div>
+              <span class="review-badge pending" style="font-size:0.75rem;padding:4px 12px">Not Started</span>
+            </div>
+            <button class="btn-outline" style="width:100%">Begin Review →</button>
+          </div>
+
+          <div class="dash-widget" style="opacity:0.6">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <p style="font-family:var(--font-display);font-weight:700;margin-bottom:3px">EdTech Research Proposal</p>
+                <p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">Completed · 1 day ago</p>
+              </div>
+              <span class="review-badge completed" style="font-size:0.75rem;padding:4px 12px">Completed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Feedback Panel ── -->
+      <div id="panel-feedback" class="dash-panel" style="display:none">
+        <div class="dash-header">
+          <div>
+            <h1 class="dash-greeting">Feedback Received</h1>
+            <p class="dash-sub">Peer reviews on your submitted drafts.</p>
+          </div>
+        </div>
+        <div style="max-width:720px">
+          <div class="dash-widget" style="margin-bottom:20px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:20px">
+              <div>
+                <p style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;margin-bottom:4px">Critical Analysis: AI in Education</p>
+                <p style="font-size:0.75rem;color:var(--teal);font-family:var(--font-mono)">New feedback received 2 hours ago</p>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px">
+              <div class="rating-row" style="gap:16px">
+                <span class="rating-label" style="width:100px;font-size:0.8rem">Argument</span>
+                <div class="rating-bar" style="flex:1"><div class="rating-fill" data-width="85%"></div></div>
+                <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--teal);width:36px">85%</span>
+              </div>
+              <div class="rating-row" style="gap:16px">
+                <span class="rating-label" style="width:100px;font-size:0.8rem">Evidence</span>
+                <div class="rating-bar" style="flex:1"><div class="rating-fill" data-width="90%"></div></div>
+                <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--teal);width:36px">90%</span>
+              </div>
+              <div class="rating-row" style="gap:16px">
+                <span class="rating-label" style="width:100px;font-size:0.8rem">Structure</span>
+                <div class="rating-bar" style="flex:1"><div class="rating-fill" data-width="72%"></div></div>
+                <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--teal);width:36px">72%</span>
+              </div>
+              <div class="rating-row" style="gap:16px">
+                <span class="rating-label" style="width:100px;font-size:0.8rem">Language</span>
+                <div class="rating-bar" style="flex:1"><div class="rating-fill" data-width="78%"></div></div>
+                <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--teal);width:36px">78%</span>
+              </div>
+            </div>
+            <div style="background:var(--surface-2);border-radius:var(--radius-sm);padding:16px">
+              <p style="font-size:0.7rem;font-family:var(--font-mono);color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px">Reviewer Comment</p>
+              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;font-style:italic">"Strong argument overall with well-supported evidence. The structure could be tightened in the middle section — consider moving the counterargument earlier. The conclusion is particularly effective."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Notifications Panel ── -->
+      <div id="panel-notifications" class="dash-panel" style="display:none">
+        <div class="dash-header">
+          <div>
+            <h1 class="dash-greeting">Notifications</h1>
+            <p class="dash-sub">Stay up to date with your review activity.</p>
+          </div>
+          <button class="btn-outline" onclick="markAllRead()">Mark all read</button>
+        </div>
+        <div class="dash-widget" style="max-width:640px">
+          <div class="notif-item" id="notif1">
+            <div class="notif-icon">💬</div>
+            <div class="notif-text">
+              <p>Your draft <strong>"Critical Analysis: AI in Education"</strong> has been reviewed. View your feedback now.</p>
+              <span>2 hours ago</span>
+            </div>
+          </div>
+          <div class="notif-item" id="notif2">
+            <div class="notif-icon">⏰</div>
+            <div class="notif-text">
+              <p>Reminder: Your review for <strong>"Climate Policy Analysis"</strong> is due in 48 hours. Don't miss the deadline.</p>
+              <span>5 hours ago</span>
+            </div>
+          </div>
+          <div class="notif-item" id="notif3">
+            <div class="notif-icon">🏅</div>
+            <div class="notif-text">
+              <p>Congratulations! You've earned the <strong>Top Reviewer</strong> badge for completing 5 reviews this week.</p>
+              <span>1 day ago</span>
+            </div>
+          </div>
+          <div class="notif-item" style="opacity:0.5">
+            <div class="notif-icon">✅</div>
+            <div class="notif-text">
+              <p>Your draft <strong>"EdTech Research Proposal"</strong> was submitted successfully.</p>
+              <span>3 days ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Leaderboard Panel ── -->
+      <div id="panel-leaderboard" class="dash-panel" style="display:none">
+        <div class="dash-header">
+          <div>
+            <h1 class="dash-greeting">Leaderboard</h1>
+            <p class="dash-sub">Anonymised community review activity for this week.</p>
+          </div>
+        </div>
+        <div class="dash-widget" style="max-width:600px">
+          <div class="widget-title">Top Reviewers — Week 9</div>
+          <div id="leaderboardList">
+            <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)">
+              <span style="font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:var(--gold);width:36px">1</span>
+              <div style="flex:1">
+                <p style="font-weight:600;font-size:0.9rem">You (Lesiba M.)</p>
+                <p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">5 reviews · Avg 4.8/5</p>
+              </div>
+              <div style="display:flex;gap:4px">
+                <span class="badge-chip">⭐ Top</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)">
+              <span style="font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:var(--text-2);width:36px">2</span>
+              <div style="flex:1">
+                <p style="font-weight:600;font-size:0.9rem">Student #A47</p>
+                <p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">4 reviews · Avg 4.6/5</p>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)">
+              <span style="font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:var(--text-3);width:36px">3</span>
+              <div style="flex:1">
+                <p style="font-weight:600;font-size:0.9rem">Student #B92</p>
+                <p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">4 reviews · Avg 4.5/5</p>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:14px 0">
+              <span style="font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:var(--text-3);width:36px">4</span>
+              <div style="flex:1">
+                <p style="font-weight:600;font-size:0.9rem">Student #C15</p>
+                <p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">3 reviews · Avg 4.3/5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Profile Panel ── -->
+      <div id="panel-profile" class="dash-panel" style="display:none">
+        <div class="dash-header">
+          <div>
+            <h1 class="dash-greeting">My Profile</h1>
+            <p class="dash-sub">Your academic progress and earned badges.</p>
+          </div>
+        </div>
+        <div style="max-width:640px">
+          <div class="dash-widget" style="margin-bottom:20px;text-align:center;padding:40px">
+            <div style="width:80px;height:80px;border-radius:50%;background:var(--teal-dim);border:2px solid rgba(0,229,195,0.3);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 16px">🎓</div>
+            <p style="font-family:var(--font-display);font-size:1.3rem;font-weight:800;margin-bottom:4px">Lesiba Masanabo</p>
+            <p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--teal);letter-spacing:0.08em">ST10446518 · BIT3 · IIE</p>
+            <div style="display:flex;gap:10px;justify-content:center;margin-top:16px">
+              <span class="badge-chip" style="font-size:0.8rem;padding:5px 14px">🎓 Scholar</span>
+              <span class="badge-chip" style="font-size:0.8rem;padding:5px 14px">💬 Helper</span>
+              <span class="badge-chip" style="font-size:0.8rem;padding:5px 14px">⭐ Top Reviewer</span>
+            </div>
+          </div>
+          <div class="dash-widget">
+            <div class="widget-title">Semester Stats</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center">
+              <div><p style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--teal)">12</p><p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">Reviews Given</p></div>
+              <div><p style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--teal)">9</p><p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">Received</p></div>
+              <div><p style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--gold)">4.8</p><p style="font-size:0.75rem;color:var(--text-2);font-family:var(--font-mono)">Avg Rating</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    function showPanel(name) {
+      document.querySelectorAll('.dash-panel').forEach(p => p.style.display = 'none');
+      document.getElementById('panel-' + name).style.display = 'block';
+      document.querySelectorAll('.sidebar-item').forEach(s => s.classList.remove('active'));
+      const activeBtn = document.querySelector(`[onclick="showPanel('${name}')"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+      // Re-init progress bars and reveals
+      initProgressBars();
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.remove('visible');
+        setTimeout(() => el.classList.add('visible'), 50);
+      });
+    }
+    function submitDraft() {
+      const title = document.getElementById('draftTitle').value.trim();
+      if (!title) { alert('Please enter an assignment title.'); return; }
+      document.getElementById('submitSuccess').style.display = 'block';
+      document.getElementById('submitSuccess').scrollIntoView({ behavior: 'smooth' });
+    }
+    function markAllRead() {
+      document.querySelectorAll('.notif-item').forEach(n => {
+        n.style.opacity = '0.5';
+        n.style.transition = 'opacity 0.4s';
+      });
+    }
+    function initProgressBars() {
+      const fills = document.querySelectorAll('.progress-fill[data-width],.rating-fill[data-width]');
+      fills.forEach(f => {
+        if (!f.dataset.animated) {
+          f.style.width = '0';
+          f.dataset.animated = 'true';
+          setTimeout(() => f.style.width = f.dataset.width, 200);
+        }
+      });
+    }
+    // Init on load
+    setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+      initProgressBars();
+    }, 100);
+  </script>
+</body>
+</html>

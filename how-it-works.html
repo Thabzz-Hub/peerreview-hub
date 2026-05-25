@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works — PeerReview Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">P</span>eer<span class="logo-accent">Review</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="how-it-works.html" class="nav-link active">How It Works</a></li>
+      <li><a href="design.html" class="nav-link">Design</a></li>
+      <li><a href="accessibility.html" class="nav-link">Accessibility</a></li>
+    </ul>
+    <a href="dashboard.html" class="btn-nav">Launch App</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <p class="page-hero-eyebrow reveal">Process</p>
+    <h1 class="page-hero-title reveal">How PeerReview Hub<br /><span class="title-gradient">Works</span></h1>
+    <p class="page-hero-sub reveal">From draft submission to polished final work — here's the full peer feedback journey.</p>
+  </section>
+
+  <!-- Steps -->
+  <section class="steps-section section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Workflow</p>
+        <h2 class="section-title">Four Simple Steps</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal" style="--delay:0s">
+          <div class="step-number">01</div>
+          <span class="step-tag">Submit</span>
+          <h3>Upload Your Draft</h3>
+          <p>Drag and drop your essay, research proposal, or case study (PDF, DOCX, or TXT). Your identity remains hidden — only the content is shared. A confirmation message immediately reassures you the file was received.</p>
+        </div>
+        <div class="step-card reveal" style="--delay:0.1s">
+          <div class="step-number">02</div>
+          <span class="step-tag">Review</span>
+          <h3>Peers Evaluate Your Work</h3>
+          <p>Fellow students receive your draft anonymously. They complete a structured rubric covering argument, evidence, structure, and language — they cannot skip any section before submitting, ensuring complete feedback.</p>
+        </div>
+        <div class="step-card reveal" style="--delay:0.2s">
+          <div class="step-number">03</div>
+          <span class="step-tag">Receive</span>
+          <h3>Get Actionable Feedback</h3>
+          <p>You're notified the moment your review is ready. Read category-by-category scores and written comments designed to help you identify weaknesses and understand exactly what to improve before your final submission.</p>
+        </div>
+        <div class="step-card reveal" style="--delay:0.3s">
+          <div class="step-number">04</div>
+          <span class="step-tag">Refine</span>
+          <h3>Revise and Resubmit</h3>
+          <p>Apply the feedback, update your draft, and resubmit for another round if needed. Your revision history dashboard tracks every round so you can see your improvement over time throughout the semester.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interaction Types -->
+  <section class="interaction-section section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Interaction Design</p>
+        <h2 class="section-title">Three Core Interaction Types</h2>
+        <p class="section-body-center">Based on Rogers, Sharp & Preece (2023) — the platform is built around three interaction paradigms that make the experience natural and efficient.</p>
+      </div>
+      <div class="interaction-grid">
+        <div class="int-card reveal" style="--delay:0s">
+          <div class="int-icon">📋</div>
+          <h3>Instructing</h3>
+          <p>The dominant interaction type. Students issue discrete instructions — clicking Submit Draft, selecting an assignment, setting a deadline. These instructing interactions match the standardised structure of peer review workflows.</p>
+        </div>
+        <div class="int-card reveal" style="--delay:0.1s">
+          <div class="int-icon">✋</div>
+          <h3>Manipulating</h3>
+          <p>Students drag and drop documents into upload zones, rearrange rubric criteria in customisable templates, and resize annotation panels. Direct manipulation makes the platform feel tactile and familiar.</p>
+        </div>
+        <div class="int-card reveal" style="--delay:0.2s">
+          <div class="int-icon">🔔</div>
+          <h3>Responding</h3>
+          <p>Proactive notifications prompt students to act: "Your draft has been reviewed — view feedback now." Deadline reminders reach reviewers 48 hours before the window closes, keeping the feedback loop moving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Interactions -->
+  <section class="section" style="background:var(--bg)">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Community</p>
+        <h2 class="section-title">Social Design Principles</h2>
+      </div>
+      <div class="design-grid">
+        <div class="design-card reveal" style="--delay:0s">
+          <span class="design-principle-tag">Anonymity</span>
+          <h3>Identity-Protected Feedback</h3>
+          <p>Neither submitters nor reviewers can see each other's identities. Research shows anonymity reduces social anxiety and encourages more forthright, honest academic critique — a core design decision on PeerReview Hub.</p>
+        </div>
+        <div class="design-card reveal" style="--delay:0.1s">
+          <span class="design-principle-tag">Social Norms</span>
+          <h3>Community Code of Conduct</h3>
+          <p>A visible code of conduct is embedded directly on the review form. Students can flag abusive or unhelpful reviews. This maintains the integrity of the social environment and sets expectations for respectful engagement.</p>
+        </div>
+        <div class="design-card reveal" style="--delay:0.2s">
+          <span class="design-principle-tag">Collaboration</span>
+          <h3>Optional Group Workspaces</h3>
+          <p>For group projects, shared workspaces let multiple peers review the same document. Optional discussion threads visible only within a defined group extend the social value of review beyond one-way transactions.</p>
+        </div>
+        <div class="design-card reveal" style="--delay:0.3s">
+          <span class="design-principle-tag">Awareness</span>
+          <h3>Social Translucence</h3>
+          <p>Following Erickson & Kellogg (2000), anonymised community statistics show how active others are — review counts, response rates — giving users a sense of presence and shared purpose without exposing identities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner section">
+    <div class="cta-inner reveal">
+      <div class="cta-glow"></div>
+      <p class="cta-eyebrow">Start now</p>
+      <h2 class="cta-title">Ready to submit your first draft?</h2>
+      <div class="cta-actions">
+        <a href="dashboard.html" class="btn-primary btn-large">Open Dashboard</a>
+        <a href="design.html" class="btn-ghost btn-large">View Design Report →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo"><span class="logo-mark">P</span>eer<span class="logo-accent">Review</span> Hub</p>
+          <p class="footer-tagline">A peer feedback platform for<br />student academic excellence.</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-group-title">Platform</p>
+          <a href="index.html">Home</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <p class="footer-group-title">Research</p>
+          <a href="design.html">Design Principles</a>
+          <a href="accessibility.html">Accessibility (WCAG)</a>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-group-title">Project</p>
+          <p>Lesiba Masanabo<br />ST10446518<br />Interaction Design — BIT3<br />IIE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 PeerReview Hub · Built for HCIN Interaction Design Module · Rogers, Sharp & Preece (2023) 6th Ed.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

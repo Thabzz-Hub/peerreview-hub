@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Principles — PeerReview Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">P</span>eer<span class="logo-accent">Review</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+      <li><a href="design.html" class="nav-link active">Design</a></li>
+      <li><a href="accessibility.html" class="nav-link">Accessibility</a></li>
+    </ul>
+    <a href="dashboard.html" class="btn-nav">Launch App</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="page-hero">
+    <p class="page-hero-eyebrow reveal">Interaction Design</p>
+    <h1 class="page-hero-title reveal">Design <span class="title-gradient">Principles</span></h1>
+    <p class="page-hero-sub reveal">The five core design principles from Rogers, Sharp & Preece (2023) that guide every interface decision on PeerReview Hub.</p>
+  </section>
+
+  <!-- Core Design Principles -->
+  <section class="design-section section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Core Principles</p>
+        <h2 class="section-title">Five Principles in Practice</h2>
+        <p class="section-body-center">Each principle maps directly from theory (Rogers et al., 2023) to a concrete design decision on the platform.</p>
+      </div>
+      <div class="design-grid">
+        <div class="design-card reveal" style="--delay:0s">
+          <span class="design-principle-tag">Principle 1</span>
+          <h3>Visibility</h3>
+          <p>Visible controls lead to greater discoverability. PeerReview Hub's navigation persists across the top of every page showing: Submit Draft · My Reviews · Feedback Received · Dashboard. Primary actions — Submit Draft, Begin Review — are prominently sized and immediately visible on login, so students never need to hunt for what to do next.</p>
+        </div>
+        <div class="design-card reveal" style="--delay:0.1s">
+          <span class="design-principle-tag">Principle 2</span>
+          <h3>Feedback</h3>
+          <p>Every significant action is confirmed immediately. A success notification confirms draft uploads. An autosave indicator appears as reviewers write. A summary confirmation page appears after review submission. Feedback removes anxiety — students never worry whether submissions were received.</p>
+        </div>
+        <div class="design-card reveal" style="--delay:0.2s">
+          <span class="design-principle-tag">Principle 3</span>
+          <h3>Constraints</h3>
+          <p>The Submit Review button is greyed out until all rubric sections are answered. File uploads are limited to PDF, DOCX, and TXT to prevent invalid formats. Time-locked constraints disable submission after the review window closes. Constraints prevent errors before they occur.</p>
+        </div>
+        <div class="design-card reveal" style="--delay:0.3s">
+          <span class="design-principle-tag">Principle 4</span>
+          <h3>Consistency</h3>
+          <p>The same review form structure applies across all assignment types — essay, research proposal, or case study. Navigation paths, buttons, and iconography for action states (active, pending, completed) are identical on every page, minimising the learning time required during a semester of use.</p>
+        </div>
+        <div class="design-card reveal" style="--delay:0.4s">
+          <span class="design-principle-tag">Principle 5</span>
+          <h3>Affordance</h3>
+          <p>File upload areas use a dotted border with a drag-and-drop icon: "Drag and drop your file here, or click to browse." Review text areas are styled to afford typing. Clickable elements change colour on hover. Every interactive element communicates how it should be used without any instruction.</p>
+        </div>
+        <div class="design-card reveal" style="--delay:0.5s">
+          <span class="design-principle-tag">UX Quality</span>
+          <h3>Desirable UX Properties</h3>
+          <p>The interface deliberately pursues: motivating (progress meters, review counts), engaging (guided rubrics, community stats), helpful (contextual cues), rewarding (badges, recognition), and social (anonymous shared space). And it explicitly avoids: frustrating (complex flows), patronising (over-prescriptive copy), boring (flat visual design).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emotional Design -->
+  <section class="emotion-section section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Emotional Design</p>
+        <h2 class="section-title">Norman's Three Levels</h2>
+        <p class="section-body-center">Norman (2005) identifies three levels of emotional reaction to design. PeerReview Hub addresses all three explicitly.</p>
+      </div>
+      <div class="emotion-levels">
+        <div class="emotion-level reveal" style="--delay:0s">
+          <div class="level-num">01</div>
+          <h3>Visceral</h3>
+          <p>The interface is professional, clean, and academic without being clinically bland. A calming dark colour scheme with teal accents and clear typographic hierarchy creates an immediate sense of trustworthy academic endeavour.</p>
+        </div>
+        <div class="emotion-level reveal" style="--delay:0.12s">
+          <div class="level-num">02</div>
+          <h3>Behavioural</h3>
+          <p>The UX must be seamless and efficient. All error states provide both an explanation and a recovery pathway, helping users avoid the "escalating cycle of frustration" Rogers et al. (2023) describe in flawed academic platforms.</p>
+        </div>
+        <div class="emotion-level reveal" style="--delay:0.24s">
+          <div class="level-num">03</div>
+          <h3>Reflective</h3>
+          <p>Platform copy emphasises the academic and scholarly value of peer review as a practice. Students feel a sense of ownership over their academic progress — not just task completion, but identity-level investment in their writing.</p>
+        </div>
+      </div>
+
+      <!-- Reassurance box -->
+      <div class="reveal" style="margin-top:40px">
+        <div style="background:var(--surface);border:1px solid rgba(0,229,195,0.2);border-radius:var(--radius-lg);padding:40px 48px;max-width:720px;margin:0 auto;text-align:center">
+          <p style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);margin-bottom:14px">Expressive Confirmation</p>
+          <p style="font-size:1.1rem;line-height:1.6;color:var(--text)">
+            "Your draft has been submitted successfully.<br />
+            Reviewers will provide feedback within <strong style="color:var(--teal)">3 days</strong>. Good luck!"
+          </p>
+          <p style="font-size:0.8rem;color:var(--text-2);margin-top:14px;font-style:italic">Warm, personalised confirmation that recognises the emotional weight of submitting academic work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reference -->
+  <section class="section" style="background:var(--bg)">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Academic Foundation</p>
+        <h2 class="section-title">Theoretical Grounding</h2>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px 48px;max-width:800px;margin:0 auto" class="reveal">
+        <p style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);margin-bottom:20px">Key References</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="padding-bottom:16px;border-bottom:1px solid var(--border)">
+            <p style="font-size:0.9rem;line-height:1.6;color:var(--text-2)">Rogers, Y., Sharp, H. and Preece, J. (2023) <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6th edn. Hoboken, NJ: John Wiley & Sons.</p>
+          </div>
+          <div style="padding-bottom:16px;border-bottom:1px solid var(--border)">
+            <p style="font-size:0.9rem;line-height:1.6;color:var(--text-2)">Norman, D.A. (1988) <em>The Design of Everyday Things</em>. New York: Basic Books. [Affordance theory]</p>
+          </div>
+          <div style="padding-bottom:16px;border-bottom:1px solid var(--border)">
+            <p style="font-size:0.9rem;line-height:1.6;color:var(--text-2)">Norman, D.A. (2005) <em>Emotional Design: Why We Love (or Hate) Everyday Things</em>. New York: Basic Books. [Three-level model]</p>
+          </div>
+          <div>
+            <p style="font-size:0.9rem;line-height:1.6;color:var(--text-2)">Erickson, T. and Kellogg, W.A. (2000) 'Social translucence: an approach to designing systems that support social processes,' <em>ACM Transactions on Computer-Human Interaction</em>, 7(1), pp. 59–83.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner section">
+    <div class="cta-inner reveal">
+      <div class="cta-glow"></div>
+      <p class="cta-eyebrow">Explore more</p>
+      <h2 class="cta-title">Read about WCAG Accessibility</h2>
+      <div class="cta-actions">
+        <a href="accessibility.html" class="btn-primary btn-large">Accessibility Report →</a>
+        <a href="dashboard.html" class="btn-ghost btn-large">Open Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo"><span class="logo-mark">P</span>eer<span class="logo-accent">Review</span> Hub</p>
+          <p class="footer-tagline">A peer feedback platform for<br />student academic excellence.</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-group-title">Platform</p>
+          <a href="index.html">Home</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <p class="footer-group-title">Research</p>
+          <a href="design.html">Design Principles</a>
+          <a href="accessibility.html">Accessibility (WCAG)</a>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-group-title">Project</p>
+          <p>Lesiba Masanabo<br />ST10446518<br />Interaction Design — BIT3<br />IIE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 PeerReview Hub · Built for HCIN Interaction Design Module · Rogers, Sharp & Preece (2023) 6th Ed.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

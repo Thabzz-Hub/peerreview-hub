@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeerReview Hub — Academic Excellence Through Peer Feedback</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── CURSOR ── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">P</span>eer<span class="logo-accent">Review</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+      <li><a href="design.html" class="nav-link">Design</a></li>
+      <li><a href="accessibility.html" class="nav-link">Accessibility</a></li>
+    </ul>
+    <a href="dashboard.html" class="btn-nav">Launch App</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Peer Feedback Platform for Students
+      </div>
+      <h1 class="hero-title reveal">
+        Elevate Your<br />
+        <span class="title-gradient">Academic Writing</span><br />
+        Before It's Graded
+      </h1>
+      <p class="hero-sub reveal">
+        Submit drafts anonymously. Receive structured rubric-based feedback from
+        fellow students. Refine and resubmit with confidence.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="dashboard.html" class="btn-primary">Get Started Free</a>
+        <a href="how-it-works.html" class="btn-ghost">See How It Works →</a>
+      </div>
+
+      <!-- Floating stats -->
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-num" data-target="2400">0</span>
+          <span class="stat-label">Drafts Reviewed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="98">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Satisfaction Rate</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="7">0</span>
+          <span class="stat-label">Usability Goals Met</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D floating cards -->
+    <div class="hero-visual">
+      <div class="floating-card card-1" data-depth="0.3">
+        <div class="card-header">
+          <span class="card-icon">📄</span>
+          <span class="card-tag">Essay Draft</span>
+        </div>
+        <div class="card-bar" style="width:80%"></div>
+        <div class="card-bar" style="width:60%"></div>
+        <div class="card-bar" style="width:90%"></div>
+        <div class="card-footer">
+          <span class="status-dot submitted"></span> Submitted for Review
+        </div>
+      </div>
+
+      <div class="floating-card card-2" data-depth="0.5">
+        <div class="card-header">
+          <span class="card-icon">⭐</span>
+          <span class="card-tag">Feedback</span>
+        </div>
+        <div class="rating-row">
+          <span class="rating-label">Argument</span>
+          <div class="rating-bar"><div class="rating-fill" style="width:85%"></div></div>
+        </div>
+        <div class="rating-row">
+          <span class="rating-label">Structure</span>
+          <div class="rating-bar"><div class="rating-fill" style="width:72%"></div></div>
+        </div>
+        <div class="rating-row">
+          <span class="rating-label">Evidence</span>
+          <div class="rating-bar"><div class="rating-fill" style="width:90%"></div></div>
+        </div>
+      </div>
+
+      <div class="floating-card card-3" data-depth="0.2">
+        <div class="card-header">
+          <span class="card-icon">🏆</span>
+          <span class="card-tag">Achievement</span>
+        </div>
+        <p class="card-text">Top Reviewer</p>
+        <p class="card-sub">5 reviews this week</p>
+        <div class="badge-row">
+          <span class="badge-chip">🎓 Scholar</span>
+          <span class="badge-chip">💬 Helper</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES STRIP ── -->
+  <section class="features-strip">
+    <div class="strip-inner">
+      <span>Anonymous Submission</span>
+      <span class="strip-dot">◆</span>
+      <span>Rubric-Based Feedback</span>
+      <span class="strip-dot">◆</span>
+      <span>Smart Notifications</span>
+      <span class="strip-dot">◆</span>
+      <span>Progress Dashboard</span>
+      <span class="strip-dot">◆</span>
+      <span>WCAG 2.0 Accessible</span>
+      <span class="strip-dot">◆</span>
+      <span>Anonymous Submission</span>
+      <span class="strip-dot">◆</span>
+      <span>Rubric-Based Feedback</span>
+      <span class="strip-dot">◆</span>
+      <span>Smart Notifications</span>
+      <span class="strip-dot">◆</span>
+    </div>
+  </section>
+
+  <!-- ── WHAT IS IT ── -->
+  <section class="what-section section" id="about">
+    <div class="container">
+      <div class="what-grid">
+        <div class="what-left">
+          <p class="section-eyebrow reveal">The Platform</p>
+          <h2 class="section-title reveal">
+            A smarter way to<br />get feedback before<br />submission day
+          </h2>
+          <p class="section-body reveal">
+            PeerReview Hub gives college students a dedicated space to upload essay
+            drafts and receive structured, rubric-driven critiques from peers —
+            fully anonymised to reduce social anxiety and encourage honest,
+            constructive responses.
+          </p>
+          <a href="how-it-works.html" class="btn-outline reveal">Explore the Process →</a>
+        </div>
+        <div class="what-right">
+          <div class="feature-grid">
+            <div class="feat-card reveal" style="--delay:0s">
+              <div class="feat-icon">🔒</div>
+              <h3>Anonymous by Design</h3>
+              <p>Submitters and reviewers never see each other's identities — reducing bias and social pressure.</p>
+            </div>
+            <div class="feat-card reveal" style="--delay:0.1s">
+              <div class="feat-icon">📋</div>
+              <h3>Structured Rubrics</h3>
+              <p>Every review follows a guided rubric — argument, evidence, structure, language — for consistent feedback.</p>
+            </div>
+            <div class="feat-card reveal" style="--delay:0.2s">
+              <div class="feat-icon">🔔</div>
+              <h3>Smart Notifications</h3>
+              <p>Proactive alerts when your draft is reviewed, plus reminders for pending review tasks.</p>
+            </div>
+            <div class="feat-card reveal" style="--delay:0.3s">
+              <div class="feat-icon">📊</div>
+              <h3>Progress Dashboard</h3>
+              <p>Track reviews given and received, revision rounds, and personal growth over the semester.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── USABILITY GOALS ── -->
+  <section class="goals-section section" id="goals">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Usability Goals</p>
+        <h2 class="section-title">Built on 7 Measurable<br />Design Principles</h2>
+        <p class="section-body-center">Every design decision traces back to Rogers, Sharp & Preece's seven core usability goals.</p>
+      </div>
+
+      <div class="goals-track">
+        <div class="goal-item reveal" style="--delay:0s">
+          <div class="goal-num">01</div>
+          <div class="goal-content">
+            <h3>Effectiveness</h3>
+            <p>Every workflow — submitting, reviewing, receiving feedback — must reach its intended outcome without error.</p>
+          </div>
+        </div>
+        <div class="goal-item reveal" style="--delay:0.08s">
+          <div class="goal-num">02</div>
+          <div class="goal-content">
+            <h3>Efficiency</h3>
+            <p>Structured rubric categories reduce decision time during review, streamlining the entire submission process.</p>
+          </div>
+        </div>
+        <div class="goal-item reveal" style="--delay:0.16s">
+          <div class="goal-num">03</div>
+          <div class="goal-content">
+            <h3>Safety</h3>
+            <p>Confirmation prompts before submission and undo functionality protect students from accidental data loss.</p>
+          </div>
+        </div>
+        <div class="goal-item reveal" style="--delay:0.24s">
+          <div class="goal-num">04</div>
+          <div class="goal-content">
+            <h3>Utility</h3>
+            <p>File upload, feedback forms, notification system, and revision history — tools students actually need.</p>
+          </div>
+        </div>
+        <div class="goal-item reveal" style="--delay:0.32s">
+          <div class="goal-num">05</div>
+          <div class="goal-content">
+            <h3>Learnability</h3>
+            <p>Onboarding tooltips and an intuitive interface layout reduce the learning curve for first-time users.</p>
+          </div>
+        </div>
+        <div class="goal-item reveal" style="--delay:0.4s">
+          <div class="goal-num">06</div>
+          <div class="goal-content">
+            <h3>Memorability</h3>
+            <p>Consistent icons, labelled navigation, and categorised menus help students recall tasks after weeks away.</p>
+          </div>
+        </div>
+        <div class="goal-item reveal" style="--delay:0.48s">
+          <div class="goal-num">07</div>
+          <div class="goal-content">
+            <h3>Satisfaction</h3>
+            <p>Post-review satisfaction ratings and in-platform feedback collection monitor user experience continuously.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── UX QUALITIES ── -->
+  <section class="ux-section section" id="ux">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">UX Design</p>
+        <h2 class="section-title">Desirable Experience<br />Qualities</h2>
+      </div>
+      <div class="ux-grid">
+        <div class="ux-card reveal" style="--delay:0s">
+          <div class="ux-icon-wrap">💡</div>
+          <h3>Motivating</h3>
+          <p>Progress meters, review counts, and positive submission feedback make reviewing feel meaningful, not laborious.</p>
+        </div>
+        <div class="ux-card reveal" style="--delay:0.1s">
+          <div class="ux-icon-wrap">🌐</div>
+          <h3>Engaging</h3>
+          <p>Guided feedback forms require critical reflection; anonymised community statistics foster a sense of participation.</p>
+        </div>
+        <div class="ux-card reveal" style="--delay:0.2s">
+          <div class="ux-icon-wrap">🤝</div>
+          <h3>Helpful</h3>
+          <p>Contextual cues inside review forms direct feedback at the right moment, guiding reviewers toward quality critique.</p>
+        </div>
+        <div class="ux-card reveal" style="--delay:0.3s">
+          <div class="ux-icon-wrap">🏅</div>
+          <h3>Rewarding</h3>
+          <p>Badges for completed reviews and recognition for consistently useful feedback sustain long-term engagement.</p>
+        </div>
+        <div class="ux-card reveal" style="--delay:0.4s">
+          <div class="ux-icon-wrap">🧑‍🤝‍🧑</div>
+          <h3>Sociable</h3>
+          <p>Anonymous yet socially aware — shared workspaces and optional group threads extend the platform's academic value.</p>
+        </div>
+        <div class="ux-card reveal" style="--delay:0.5s">
+          <div class="ux-icon-wrap">🚫</div>
+          <h3>Frustration-Free</h3>
+          <p>No overly complex submission flows, no patronising copy, no visually flat interfaces — by explicit design decision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ── -->
+  <section class="cta-banner section">
+    <div class="cta-inner reveal">
+      <div class="cta-glow"></div>
+      <p class="cta-eyebrow">Ready to improve?</p>
+      <h2 class="cta-title">Start getting better feedback<br />on your work today.</h2>
+      <div class="cta-actions">
+        <a href="dashboard.html" class="btn-primary btn-large">Open Dashboard</a>
+        <a href="design.html" class="btn-ghost btn-large">Read Design Report</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo"><span class="logo-mark">P</span>eer<span class="logo-accent">Review</span> Hub</p>
+          <p class="footer-tagline">A peer feedback platform for<br />student academic excellence.</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-group-title">Platform</p>
+          <a href="index.html">Home</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <p class="footer-group-title">Research</p>
+          <a href="design.html">Design Principles</a>
+          <a href="accessibility.html">Accessibility (WCAG)</a>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-group-title">Project</p>
+          <p>Lesiba Masanabo<br />ST10446518<br />Interaction Design — BIT3<br />IIE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 PeerReview Hub · Built for HCIN Interaction Design Module · Rogers, Sharp & Preece (2023) 6th Ed.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

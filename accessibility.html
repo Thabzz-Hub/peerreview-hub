@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility — PeerReview Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">P</span>eer<span class="logo-accent">Review</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+      <li><a href="design.html" class="nav-link">Design</a></li>
+      <li><a href="accessibility.html" class="nav-link active">Accessibility</a></li>
+    </ul>
+    <a href="dashboard.html" class="btn-nav">Launch App</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="page-hero">
+    <p class="page-hero-eyebrow reveal">WCAG 2.0</p>
+    <h1 class="page-hero-title reveal"><span class="title-gradient">Accessibility</span><br />by Design</h1>
+    <p class="page-hero-sub reveal">PeerReview Hub is built on the four POUR principles of the Web Content Accessibility Guidelines 2.0 — accessibility is a guiding principle, not a checkbox.</p>
+  </section>
+
+  <!-- POUR intro strip -->
+  <section class="features-strip">
+    <div class="strip-inner">
+      <span>Perceivable</span><span class="strip-dot">◆</span>
+      <span>Operable</span><span class="strip-dot">◆</span>
+      <span>Understandable</span><span class="strip-dot">◆</span>
+      <span>Robust</span><span class="strip-dot">◆</span>
+      <span>Perceivable</span><span class="strip-dot">◆</span>
+      <span>Operable</span><span class="strip-dot">◆</span>
+      <span>Understandable</span><span class="strip-dot">◆</span>
+      <span>Robust</span><span class="strip-dot">◆</span>
+    </div>
+  </section>
+
+  <!-- POUR Principles -->
+  <section class="wcag-section section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">The Four Principles</p>
+        <h2 class="section-title">POUR in Practice</h2>
+        <p class="section-body-center">Each WCAG 2.0 principle is directly applied within PeerReview Hub with specific, measurable design decisions.</p>
+      </div>
+      <div class="wcag-grid">
+
+        <div class="wcag-card reveal" style="--delay:0s">
+          <div class="wcag-initial">P</div>
+          <h3>Perceivable</h3>
+          <p>All information and UI components must be available in ways that can be perceived — invisible to none of the user's senses.</p>
+          <ul class="wcag-list">
+            <li>Alternative text on all icons and images, compatible with screen readers</li>
+            <li>Text-background contrast ratio of at least 4.5:1 (WCAG 2.0 SC 1.4.3)</li>
+            <li>Text-only mode eliminating visual elements for a simplified, high-contrast interface</li>
+            <li>Captions or transcripts for any multimedia content</li>
+          </ul>
+        </div>
+
+        <div class="wcag-card reveal" style="--delay:0.1s">
+          <div class="wcag-initial">O</div>
+          <h3>Operable</h3>
+          <p>Interface elements and navigation must be operable by all users, including those who cannot use a mouse.</p>
+          <ul class="wcag-list">
+            <li>Full keyboard navigation — submit and review assignments entirely without a mouse</li>
+            <li>Clear visual focus indicators on all interactive elements (WCAG 2.0 SC 2.4.7)</li>
+            <li>Countdown display on time-limited features with an option to extend the deadline</li>
+            <li>No keyboard traps — users can always navigate away from any component</li>
+          </ul>
+        </div>
+
+        <div class="wcag-card reveal" style="--delay:0.2s">
+          <div class="wcag-initial">U</div>
+          <h3>Understandable</h3>
+          <p>Information and operation of the interface must be understandable — readable, predictable, and error-assisted.</p>
+          <ul class="wcag-list">
+            <li>Plain language throughout — no jargon in feedback forms or instructional text</li>
+            <li>Error messages that name the cause and provide the recovery pathway (SC 3.3.1)</li>
+            <li>Navigation appears in the same location on every page (no surprises)</li>
+            <li>No automatic page redirects unless explicitly triggered by the user</li>
+          </ul>
+        </div>
+
+        <div class="wcag-card reveal" style="--delay:0.3s">
+          <div class="wcag-initial">R</div>
+          <h3>Robust</h3>
+          <p>Content must be reliably interpreted by a wide range of user agents, including current and future assistive technologies.</p>
+          <ul class="wcag-list">
+            <li>Semantic HTML5 elements — headings, form labels, landmark regions</li>
+            <li>ARIA attributes where native semantics don't convey enough meaning</li>
+            <li>Automated accessibility audits using WAVE and Axe throughout development</li>
+            <li>Valid, well-structured markup that assistive technologies can parse reliably</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contrast demo -->
+  <section class="section" style="background:var(--bg-2)">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Colour Accessibility</p>
+        <h2 class="section-title">Contrast Ratios</h2>
+        <p class="section-body-center">Every text-background pairing on PeerReview Hub meets or exceeds WCAG 2.0 AA requirements.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:720px;margin:0 auto" class="reveal">
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center">
+          <p style="color:var(--text);font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:8px">Primary Text</p>
+          <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--teal);letter-spacing:0.1em">#E8EDF5 on #080C14</p>
+          <p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--teal);font-weight:700;margin-top:8px">≥ 12:1</p>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center">
+          <p style="color:var(--teal);font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:8px">Accent Text</p>
+          <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--teal);letter-spacing:0.1em">#00E5C3 on #080C14</p>
+          <p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--teal);font-weight:700;margin-top:8px">≥ 8.2:1</p>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center">
+          <p style="color:var(--text-2);font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:8px">Secondary Text</p>
+          <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--teal);letter-spacing:0.1em">#8A98B4 on #080C14</p>
+          <p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--teal);font-weight:700;margin-top:8px">≥ 4.8:1 ✓</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rogers quote -->
+  <section class="section" style="background:var(--bg)">
+    <div class="container">
+      <div style="border-left:3px solid var(--teal);padding:32px 40px;max-width:760px;margin:0 auto" class="reveal">
+        <p style="font-family:var(--font-display);font-size:1.3rem;font-weight:600;line-height:1.5;margin-bottom:16px;color:var(--text)">
+          "Building for accessibility also inherently leads to building for all — many accessibility features such as keyboard controls and visual structure enhance the experience of all users."
+        </p>
+        <p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--teal);letter-spacing:0.08em">
+          Rogers, Sharp & Preece (2023)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner section">
+    <div class="cta-inner reveal">
+      <div class="cta-glow"></div>
+      <p class="cta-eyebrow">Continue exploring</p>
+      <h2 class="cta-title">Try the interactive dashboard</h2>
+      <div class="cta-actions">
+        <a href="dashboard.html" class="btn-primary btn-large">Open Dashboard</a>
+        <a href="index.html" class="btn-ghost btn-large">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo"><span class="logo-mark">P</span>eer<span class="logo-accent">Review</span> Hub</p>
+          <p class="footer-tagline">A peer feedback platform for<br />student academic excellence.</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-group-title">Platform</p>
+          <a href="index.html">Home</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <p class="footer-group-title">Research</p>
+          <a href="design.html">Design Principles</a>
+          <a href="accessibility.html">Accessibility (WCAG)</a>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-group-title">Project</p>
+          <p>Lesiba Masanabo<br />ST10446518<br />Interaction Design — BIT3<br />IIE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 PeerReview Hub · Built for HCIN Interaction Design Module · Rogers, Sharp & Preece (2023) 6th Ed.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
